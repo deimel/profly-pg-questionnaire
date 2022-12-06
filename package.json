@@ -3,6 +3,8 @@
     "@wordpress/env": "^5.7.0"
   },
   "scripts": {
-    "wp-env": "wp-env"
+    "start": "wp-env start",
+    "stop": "wp-env stop",
+    "help": "wp-env help"
   }
 }
