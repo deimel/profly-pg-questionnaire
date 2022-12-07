@@ -3,8 +3,20 @@
     "@wordpress/env": "^5.7.0"
   },
   "scripts": {
+    "help": "wp-env help",
     "start": "wp-env start",
+    "start:debug": "wp-env start --debug",
+    "start:updated": "wp-env start --update",
+    "logs": "wp-env logs --no-watch",
     "stop": "wp-env stop",
-    "help": "wp-env help"
+    "destroy": "wp-env destroy",
+    "get-install-path": "wp-env install-path",
+    "bash:cli": "wp-env run cli bash",
+    "wp:cli": "wp-env run cli wp shell",
+    "wp:cli:user-list": "wp-env run cli wp user list",
+    "wp:cli:create-page-example": "wp-env run cli \"wp post create --post_type=page --post_title='Test 123'\"",
+    "wp:cli:plugin-install-twentig": "wp-env run cli wp plugin install twentig --activate",
+    "wp:cli:plugin-install-kadence-blocks": "wp-env run cli wp plugin install kadence-blocks --activate",
+    "wp-env:global-install" : "npm -g i @wordpress/env"
   }
 }

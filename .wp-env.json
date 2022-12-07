@@ -1,0 +1,14 @@
+{
+  "core": null,
+  "plugins": ["."],
+  "config": {
+    "WP_TESTS_EMAIL": "Augustinus.Deimel@t-online.de",
+    "WP_TESTS_TITLE": "Deimels Test Blog"
+  },
+  "port": 8888,
+  "env": {
+    "tests": {
+      "port": 8889
+    }
+  }
+}
