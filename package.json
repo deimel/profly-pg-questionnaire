@@ -1,22 +1,30 @@
 {
   "devDependencies": {
-    "@wordpress/env": "^5.7.0"
+    "@wordpress/env": "^5.7.0",
+    "@wordpress/scripts": "^24.6.0"
   },
   "scripts": {
     "help": "wp-env help",
     "start": "wp-env start",
-    "start:debug": "wp-env start --debug",
+    "start:debug": "wp-env start --debug --exdebug",
     "start:updated": "wp-env start --update",
+    "clean": "wp-env clean all",
     "logs": "wp-env logs --no-watch",
     "stop": "wp-env stop",
     "destroy": "wp-env destroy",
     "get-install-path": "wp-env install-path",
     "bash:cli": "wp-env run cli bash",
     "wp:cli": "wp-env run cli wp shell",
+    "wp:cli:config-list": "wp-env run cli wp config list",
     "wp:cli:user-list": "wp-env run cli wp user list",
+    "wp:cli:create-user-me": "wp-env run cli wp user create Augustinus Augustinus.Deimel@t-online.de --user_pass=august --role=author",
     "wp:cli:create-page-example": "wp-env run cli \"wp post create --post_type=page --post_title='Test 123'\"",
     "wp:cli:plugin-install-twentig": "wp-env run cli wp plugin install twentig --activate",
-    "wp:cli:plugin-install-kadence-blocks": "wp-env run cli wp plugin install kadence-blocks --activate",
-    "wp-env:global-install" : "npm -g i @wordpress/env"
+    "wp-env:global-install": "npm -g i @wordpress/env",
+    
+    "build": "wp-scripts build",
+    "plugin-zip": "wp-scripts plugin-zip",
+    "wp-scripts:start": "wp-scripts start"
+
   }
 }

@@ -156,9 +156,10 @@ class Profly_Pg_Questionnaire {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		//$this->loader->add_action( 'init', $plugin_admin, 'cptui_register_my_cpts' );
 
 	}
-
+	
 	/**
 	 * Register all of the hooks related to the public-facing functionality
 	 * of the plugin.
@@ -216,3 +217,4 @@ class Profly_Pg_Questionnaire {
 	}
 
 }
+
