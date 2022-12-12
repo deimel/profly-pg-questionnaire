@@ -1,4 +1,5 @@
 @startuml Questionnaire
+skinparam handwritten true
 
 title Questionnaire (Fragenkatalog)
 
@@ -10,24 +11,24 @@ package "Administration" #DDDDDD {
     +createQuestion()
   }
   note top: Fragenkatalog
-  
+
   class Question {
     -text
     -explanation
     +createPossibleAnswer()
     +deletePossibleAnswer()
   }
-  
+
   class PossibleAnswer {
     -text
     -explanation
     -boolean correct
     +setCorrect( boolean )
   }
-  
+
   Questionnaire "1" *-down- "includedQuestions" Question
   Question "1" *-down- "offeredAnswers" PossibleAnswer
-  
+
 }
 
 package "Survey Execution" #88D78F {
@@ -37,13 +38,13 @@ package "Survey Execution" #88D78F {
     -finishedTime
     +start()
   }
-  note top: Befragung, die ein\nTeilnehmer für einen\nFragenkatalog anlegt \nund dann started 
-  
+  note top: Befragung, die ein\nTeilnehmer für einen\nFragenkatalog anlegt \nund dann started
+
   class AskedQuestion {
     -startTime
     -finishedTime
   }
-  
+
   Survey "1" *-- "questions" AskedQuestion
   AskedQuestion -right--> "1" Question
   AskedQuestion "1" o--> "choosen \nanswer(s)" PossibleAnswer
