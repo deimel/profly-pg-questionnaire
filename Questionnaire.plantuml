@@ -1,0 +1,62 @@
+@startuml Questionnaire
+
+title Questionnaire (Fragenkatalog)
+
+package "Administration" #DDDDDD {
+
+  class Questionnaire {
+    -name
+    -description
+    +createQuestion()
+  }
+  note top: Fragenkatalog
+  
+  class Question {
+    -text
+    -explanation
+    +createPossibleAnswer()
+    +deletePossibleAnswer()
+  }
+  
+  class PossibleAnswer {
+    -text
+    -explanation
+    -boolean correct
+    +setCorrect( boolean )
+  }
+  
+  Questionnaire "1" *-down- "includedQuestions" Question
+  Question "1" *-down- "offeredAnswers" PossibleAnswer
+  
+}
+
+package "Survey Execution" #88D78F {
+
+  class Survey {
+    -startTime
+    -finishedTime
+    +start()
+  }
+  note top: Befragung, die ein\nTeilnehmer für einen\nFragenkatalog anlegt \nund dann started 
+  
+  class AskedQuestion {
+    -startTime
+    -finishedTime
+  }
+  
+  Survey "1" *-- "questions" AskedQuestion
+  AskedQuestion -right--> "1" Question
+  AskedQuestion "1" o--> "choosen \nanswer(s)" PossibleAnswer
+
+}
+
+class Participant {
+  +Survey createSurvey( Questionnaire )
+  +deleteSurvey( Survey )
+}
+note top: Befragungsteilnehmer
+
+Survey -right--> "1" Participant
+Survey -left--> "1" Questionnaire
+
+@enduml
