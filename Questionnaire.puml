@@ -1,5 +1,5 @@
 @startuml Questionnaire
-skinparam handwritten true
+' skinparam handwritten true
 
 title Questionnaire (Fragenkatalog)
 
