@@ -3,6 +3,10 @@ skinparam handwritten true
 
 title Questionnaire (Fragenkatalog)
 
+/' 
+  A little class diagramm for the Profly Paragliding Questionnaire
+'/
+
 package "Administration" #DDDDDD {
 
   class Questionnaire {
